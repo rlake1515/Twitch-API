@@ -1,14 +1,14 @@
-var streamers = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", "er"];
+var streamers = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
 var channels = 'https://api.twitch.tv/kraken/channels/';
 var streams = 'https://api.twitch.tv/kraken/streams/';
 
 $(document).ready(function(){
 for (let i = 0; i< streamers.length; i++){
     twitchAPICall(channels,streamers[i]);
+    twitchStreamCall(streams,streamers[i]);
 }
 });
 function twitchAPICall(url, channelName){
-    console.log('foo');
 $.ajax({
         url: `${url}${channelName}`,
         mimeType: 'application/json',
@@ -21,11 +21,33 @@ $.ajax({
         success: function(json) {
             console.log(json);
             $("#userList").append("<li>" + json.name + "</li>");
+            $("#icons").append("<li>" +json.game + "</li>");
+
         }
         });        
     }
 
-
+function twitchStreamCall(url, streamName){
+$.ajax({
+        url: `${url}${streamName}`,
+        mimeType: 'application/json',
+        dataType: 'json',
+        type: "GET",
+        headers: {
+            "Client-ID":'pnw842lr5wybeu8pgzity7j9immg7i'
+        },
+        
+        success: function(json) {
+            if (json.stream === null){
+               $("#statusList").append("<li>" +"offline" + "</li>");
+                
+            }else{
+               $("#statusList").append("<li>" +"online" + "</li>");
+            }
+            console.log(json.stream);
+        }
+        });        
+    }
 
 
 var twitchData = 
