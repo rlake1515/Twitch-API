@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Twitch API</title>
         <link rel="shortcut icon" href="">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,11 +12,14 @@
         <script src="Twitch JS.js"></script>
     </head>
     <body>
-        <div>TODO write content</div>
-        <div class="row container">
-            <div id="icons" class="col-md-4 col-xs-4">Icon<ul id="iconList"></ul></div>
-            <div class="col-md-4 col-xs-4">Name<ul id="userList"></ul></div>
-            <div class="col-md-4 col-xs-4">Status<ul id="statusList"></ul></div>
+        <div id="heading">Twitch.TV users</div>
+        <div id="menu">
+            <span id="allButton">All</span>
+            <span id="onlineButton">Online</span>
+            <span id="offlineButton">Offline</span>
+        </div>
+        <div class="container-fluid">
+        <div id="userBox" class="row"></div>
         </div>
     </body>
 </html>
