@@ -23,7 +23,7 @@ $.ajax({
             console.log(json);
             $("#userBox").append(`<div id="${num}" class="streamerChannel"></div>`);
             $(`#${num}`).append("<i class='streamerName col-md-2'>" + json.name+ "</i>");            
-            $(`#${num}`).prepend("<img class='userIcon col-md-1' style=\"height:40px;\" src='" +json.logo + "'>");
+            $(`#${num}`).prepend("<img class='userIcon col-md-1'src='" +json.logo + "'>");
 
         }
         });        

@@ -14,20 +14,28 @@
     text-align: center;
     font-weight: 900;
     font-size: 20pt;
-    background-color: hsla(60, 100%, 50%, .8);
+    background-color: hsla(200, 100%, 50%, .8);
     border-radius: 20px;
     width: 300px;
     margin: 0 auto
 }
 .userStatus{
     padding-left:30px;
+    font-weight: 900;
+    font-size: 16pt;
+    padding: 15px 0px;
 }
 .userIcon{
     padding: 10px 30px 10px 10px;
     height: 100%;
+    border-radius: 40%;
 }
 .userStream{
+    font-weight: 900;
+    padding: 10px 0px;
 }
 .streamerName{
-    
+    font-weight: 900;
+    font-size: 20px;
+    padding: 15px 0px;
 }
